@@ -21,7 +21,7 @@ export function parseLinkFromText(text) {
 	const linkArray = !content.match(regex) ? [] : content.match(regex).map(linkText => {
 		linkText = linkText.slice(1, -1); // remove < and >
 		const links = linkText.split('|');
-		const linkHref = links[0];
+		const linkHref = links[0].replace(/餮/g, '').replace(/犇/g, '');
 		const linkLabel = links[1] || linkHref;
 		return {
 			content: `<a href="${linkHref}">${linkLabel}</a>`,
