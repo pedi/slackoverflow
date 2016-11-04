@@ -4,7 +4,7 @@ const appPath = path.resolve(__dirname, '../app');
 module.exports = {
     entry: {
         app: appPath + '/index.js',
-        vendor: ['react', 'react-dom', 'react-router']
+        vendor: ['react', 'react-dom', 'react-router', 'moment']
     },
     output: {
         path: path.resolve(__dirname,'../dist/'),
@@ -18,6 +18,15 @@ module.exports = {
                 include: appPath,
                 loaders: ['react-hot', 'babel'],
             },
+            {
+                test: /\.(png|jpg)$/,
+                include: path.resolve(__dirname, '../assets'),
+                loader: 'file-loader',
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader',
+            }
         ]
     },
     plugins: [

@@ -9,4 +9,4 @@ ReactDom.render((
     <Router history={browserHistory}>
         {routes}
     </Router>
-), container)
+), container);
