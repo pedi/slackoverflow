@@ -22,7 +22,8 @@ export function parseLinkFromText(text) {
 		linkText = linkText.slice(1, -1); // remove < and >
 		const links = linkText.split('|');
 		const linkHref = links[0].replace(/餮/g, '').replace(/犇/g, '');
-		const linkLabel = links[1] || linkHref;
+		let linkLabel = links[1] || linkHref;
+		linkLabel = linkLabel.replace(/餮/g, '').replace(/犇/g, '');
 		return {
 			content: `<a href="${linkHref}">${linkLabel}</a>`,
 			parsed: true,
