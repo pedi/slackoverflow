@@ -14,6 +14,9 @@ export default function SlackCardContent({text}) {
 	});
 
 	// code first
+	segments = segments.map(segment => parseHighlightFromText(segment)).reduce((carry, segment) => {
+		return carry.concat(segment);
+	}, []);
 	segments = segments.map(segment => parseBlockCodeFromText(segment)).reduce((carry, segment) => {
 		return carry.concat(segment);
 	}, []);
@@ -30,9 +33,6 @@ export default function SlackCardContent({text}) {
 		return carry.concat(segment);
 	}, []);
 	segments = segments.map(segment => parseItalicFromText(segment)).reduce((carry, segment) => {
-		return carry.concat(segment);
-	}, []);
-	segments = segments.map(segment => parseHighlightFromText(segment)).reduce((carry, segment) => {
 		return carry.concat(segment);
 	}, []);
 	return (

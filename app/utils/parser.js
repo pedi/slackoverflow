@@ -5,6 +5,11 @@ const EmojiMap = EmojiRawData.reduce((map, data) => {
 	return map;
 }, {});
 
+
+function sanitizeText(text) {
+	return text.replace(/餮/g, '').replace(/犇/g, '');
+}
+
 /**
  *
  * @param {object} text, contains content {string}, parsed {boolean}
@@ -148,7 +153,7 @@ export function parseHighlightFromText(text) {
 
 	return {
 		content: content,
-		parsed: true,
+		parsed: false,
 	}
 }
 
