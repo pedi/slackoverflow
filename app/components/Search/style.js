@@ -3,6 +3,9 @@ export default {
 		margin: '0 auto',
 		display: 'block',
 		maxWidth: 800,
+		padding: '10px 20px',
+		backgroundColor: 'white',
+		minHeight: '100vh',
 	},	
 	listItem: {
 		marginTop: 20,
