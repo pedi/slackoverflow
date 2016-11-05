@@ -30,7 +30,7 @@ export function parseLinkFromText(text) {
 		let linkLabel = links[1] || linkHref;
 		linkLabel = linkLabel.replace(/餮/g, '').replace(/犇/g, '');
 		return {
-			content: `<a href="${linkHref}">${linkLabel}</a>`,
+			content: `<a href="${linkHref}" target="_blank">${linkLabel}</a>`,
 			parsed: true,
 		}
 	});

@@ -4,6 +4,7 @@ import style from './style';
 import SlackCard from 'components/SlackCard';
 import SearchHeader from 'components/SearchHeader';
 import {search} from 'services/index';
+const loadingGif = require('../../../assets/image/loading.gif');
 
 const BATCH_LIMIT = 5;
 
@@ -98,7 +99,7 @@ export default class App extends React.Component {
                       pageStart={0}
                       loadMore={this.fetch}
                       hasMore={!noMore}
-                      loader={<div>loading</div>}
+                      loader={<div style={style.loadingContainer}><img src={loadingGif}/></div>}
                     >
                     {
 											results.map(message => {
@@ -113,11 +114,13 @@ export default class App extends React.Component {
 										{
 											noMore && (suggestion ? (
 												<div style={style.noMore} >
-													Are you looking for
-													<div onClick={() => { this.context.router.push({
+													Are you looking for &nbsp;
+													<a
+														href="#"
+														onClick={(e) => { e.preventDefault(); this.context.router.push({
 														pathname: '/search',
 														query: Object.assign({}, this.props.location.query, { keyword: suggestion})
-													})}}>suggestion</div>
+													})}}>{suggestion}</a>
 												</div>
 											) : (
 												<div style={style.noMore}>No More Results</div>

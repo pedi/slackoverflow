@@ -5,7 +5,7 @@ export default {
 		maxWidth: 800,
 	},	
 	listItem: {
-		marginTop: 20,	
+		marginTop: 20,
 		display: 'block',
 		linkStyle: 'none',
 		textDecoration: 'none',
@@ -13,5 +13,10 @@ export default {
 	},
 	noMore: {
 		marginTop: 30,
+		textAlign: 'center',
+	},
+	loadingContainer: {
+		display: 'flex',
+		justifyContent: 'center',
 	}
 }

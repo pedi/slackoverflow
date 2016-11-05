@@ -23,7 +23,7 @@ module.exports = {
                 loaders: ['babel'],
             },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|gif)$/,
                 include: path.resolve(__dirname, '../assets'),
                 loader: 'file-loader',
             },
