@@ -206,7 +206,7 @@ export function parseEmojiFromText(text) {
 		return [text];
 	}
 
-	const regex = /:.+:/g;
+	const regex = /:\S+:/g;
 	const content = text.content;
 	const rawTextArray = content.split(regex).map(text => {
 		return { content: text, parsed: false }

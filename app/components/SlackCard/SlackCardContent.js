@@ -20,6 +20,7 @@ export default function SlackCardContent({text}) {
 	segments = segments.map(segment => parseBlockCodeFromText(segment)).reduce((carry, segment) => {
 		return carry.concat(segment);
 	}, []);
+
 	segments = segments.map(segment => parseInlineCodeFromText(segment)).reduce((carry, segment) => {
 		return carry.concat(segment);
 	}, []);
