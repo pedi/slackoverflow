@@ -35,6 +35,10 @@ export const heading = {
 		fontSize: 12,
 		marginRight: 5,
 	},
+	channelname: {
+		color: '#9e9ea6',
+		fontSize: 12,
+	},
 };
 
 export const content = {

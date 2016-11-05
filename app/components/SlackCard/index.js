@@ -16,6 +16,8 @@ export default function SlackCard({message}) {
 				<div style={headingStyle.title}>
 					<div style={headingStyle.username}>{message.username}</div>
 					<div style={headingStyle.timestamp}>{moment(parseFloat(message.ts) * 1000).fromNow()}</div>
+					<div style={{flex: 1}}>{message.channelname}</div>
+					<div style={headingStyle.channelname}>{message.channelname}</div>
 				</div>
 				<SlackCardContent text={message.text}/>
 				{ message.subtype === 1 &&
