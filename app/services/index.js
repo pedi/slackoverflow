@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 
 export function makeFullUrl(url) {
-  const BASE_HOST = 'http://10.2.201.244:3000';
+  const BASE_HOST = __BASE_HOST__;
   if (url.indexOf(BASE_HOST) == -1) {
     url = BASE_HOST + url;
   }

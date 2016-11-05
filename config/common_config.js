@@ -1,6 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const appPath = path.resolve(__dirname, '../app');
+
+const devFlagPlugin = new webpack.DefinePlugin({
+    __BASE_HOST__: JSON.stringify(process.env.HOST || 'http://10.2.201.244:3000'),
+});
 module.exports = {
     entry: {
         app: appPath + '/index.js',
@@ -30,6 +34,7 @@ module.exports = {
         ]
     },
     plugins: [
+        devFlagPlugin,
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
     ],
     resolve: {
