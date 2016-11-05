@@ -143,8 +143,8 @@ export function parseHighlightFromText(text) {
 	}
 
 	let content = text.content;
-	const atRegex =/鲦鲦([\s\S]+)鲻鲻/g;
-	const atRegex2 =/籴籴([\s\S]+)耋耋/g;
+	const atRegex =/鲦鲦 ([\S]+) 鲻鲻/g;
+	const atRegex2 =/籴籴 ([\S]+) 耋耋/g;
 	content = content
 		.replace(atRegex, `<span style="color:#439fe0">$1</span>`)
 		.replace(atRegex2, `<span style="color:#439fe0">$1</span>`);
